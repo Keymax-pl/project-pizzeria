@@ -39,7 +39,7 @@ const select = {
       imageVisible: 'active',
     },
   };
-
+ 
   const settings = {
     amountWidget: {
       defaultValue: 1,
@@ -81,7 +81,7 @@ const select = {
       menuContrainer.appendChild(thisProduct.element);
       //console.log(this.renderInMenu)
     }
-
+    
     getElements(){
       const thisProduct = this;
     
@@ -230,7 +230,14 @@ const select = {
       thisWidget.value = newValue;
     }
 
-    thisWidget.value = newValue;
+    if(newValue > settings.amountWidget.defaultMax){
+      thisWidget.value = settings.amountWidget.defaultMax;
+    }
+
+    else if(newValue < settings.amountWidget.defaultMin){
+      thisWidget.value = settings.amountWidget.defaultMin;
+    }
+
     thisWidget.input.value = thisWidget.value;
   }
 
