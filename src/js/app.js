@@ -4,13 +4,6 @@ import Cart from './components/Cart.js';
 import Booking from "./components/Booking.js";
   const app = {
 
-    initBooking: function(){
-      const thisApp = this;
-
-      thisApp.bookingElement = document.querySelector(select.containerOf.booking)
-      thisApp.booking = new Booking(thisApp.bookingElement);
-    },
-
     initPages: function(){
       const thisApp = this;
 
@@ -98,6 +91,26 @@ import Booking from "./components/Booking.js";
       console.log('thisApp.data', JSON.stringify(thisApp.data));
     },
 
+    initCart: function(){
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+
+      thisApp.productList = document.querySelector(select.containerOf.menu);
+
+      thisApp.productList.addEventListener('add-to-cart', function(event){
+        app.cart.add(event.detail.product);
+      });
+    },
+
+    initBooking: function(){
+      const thisApp = this;
+
+      const bookingElement = document.querySelector(select.containerOf.booking);
+      thisApp.booking = new Booking(bookingElement);
+    },
+
     init: function(){
       const thisApp = this;
       //console.log('*** App starting ***');
@@ -114,18 +127,6 @@ import Booking from "./components/Booking.js";
     
     },
 
-    initCart: function(){
-      const thisApp = this;
-
-      const cartElem = document.querySelector(select.containerOf.cart);
-      thisApp.cart = new Cart(cartElem);
-
-      thisApp.productList = document.querySelector(select.containerOf.menu);
-
-      thisApp.productList.addEventListener('add-to-cart', function(event){
-        app.cart.add(event.detail.product);
-      });
-    }
   };
 
   app.init();

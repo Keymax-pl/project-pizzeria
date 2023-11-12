@@ -26,7 +26,11 @@ class Booking{
     initWidgets(){
         const thisBooking = this;
 
-        
+        thisBooking.peopleAmount = new amountWidget(thisBooking.dom.peopleAmount);
+        thisBooking.dom.peopleAmount.addEventListener("updated", function () {});
+
+        thisBooking.hoursAmount =  new amountWidget(thisBooking.dom.hoursAmount);
+        thisBooking.dom.hoursAmount.addEventListener("updated", function () {});
     }
 }
 
