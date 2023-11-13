@@ -83,7 +83,7 @@ class Product{
       thisProduct.cartButton.addEventListener('click', function(event){
         event.preventDefault();
         thisProduct.processOrder();
-        thisProduct.addToCard();
+        thisProduct.addToCart();
       });
 
       //console.log(this.initOrderFrom, 'initOrderFrom')

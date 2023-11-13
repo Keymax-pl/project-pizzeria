@@ -15,11 +15,12 @@ class Booking{
 
         thisBooking.dom = {};
         thisBooking.dom.wrapper = element;
-        thisBooking.dom.peopleAmount = document.querySelector(select.booking.peopleAmount);
-        thisBooking.dom.hoursAmount = document.querySelector(select.booking.hoursAmount);
 
         const generatedHTML =  templates.bookingWidget();
         thisBooking.dom.wrapper.innerHTML = generatedHTML;
+        
+        thisBooking.dom.peopleAmount = document.querySelector(select.booking.peopleAmount);
+        thisBooking.dom.hoursAmount = document.querySelector(select.booking.hoursAmount);
 
     }
 
