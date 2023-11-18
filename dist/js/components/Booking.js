@@ -259,7 +259,19 @@ class Booking{
           body: JSON.stringify(payload),
         };
         
-        fetch(url, options);
+        fetch(url, options)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(){
+            thisBooking.makeBooked(
+                payload.date,
+                payload.hour,
+                payload.duration,
+                payload.table
+            );
+        })
+        console.log('Successfully booked', payload);
       }
 
     initWidgets(){
