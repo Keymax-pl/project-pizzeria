@@ -128,10 +128,10 @@ import Home from "./components/Home.js";
       //console.log('classNames:', classNames);
       //console.log('settings:', settings);
       //console.log('templates:', templates);
-      thisApp.initHome();
+      //thisApp.initHome();
       thisApp.initPages();
       thisApp.initData();
-      //thisApp.initMenu();
+      thisApp.initHome();
       thisApp.initCart();
       thisApp.initBooking();
     
